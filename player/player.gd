@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED : int = 150
+@export var RUN_MULTIPLIER : int = 2
 @export var JUMP_FORCE : int = 500
 @export var GRAVITY : int = 900
 
@@ -9,7 +10,7 @@ extends CharacterBody2D
 
 func _physics_process(delta):
 	handle_movement(delta)
-	
+
 
 func handle_movement(delta):
 	var direction = Input.get_axis("move_left","move_right")
@@ -18,7 +19,11 @@ func handle_movement(delta):
 		facing_direction = direction
 		velocity.x = SPEED * direction
 		if is_on_floor():
-			sprites.play("run")
+			if Input.is_action_pressed("run"):
+				sprites.play("run")
+				velocity.x *= RUN_MULTIPLIER
+			else:
+				sprites.play("walking")
 	else:
 		velocity.x = 0
 		if is_on_floor():
@@ -32,7 +37,7 @@ func handle_movement(delta):
 			sprites.play("fall")
 	
 	if is_on_floor():
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("move_up"):
 			velocity.y -= JUMP_FORCE
 			sprites.play("jump")
 	move_and_slide()
