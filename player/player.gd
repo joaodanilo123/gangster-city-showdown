@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var SPEED : int = 150
 @export var RUN_MULTIPLIER : int = 2
@@ -8,9 +9,11 @@ extends CharacterBody2D
 @onready var sprites = $Sprites
 @onready var facing_direction = 1
 
+func _ready():
+	Global.player = self
+
 func _physics_process(delta):
 	handle_movement(delta)
-
 
 func handle_movement(delta):
 	var direction = Input.get_axis("move_left","move_right")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqqms627dhatf"]
+
+[ext_resource type="Script" path="res://levels/menu/map_button.gd" id="1_stl32"]
+
+[node name="MapButton" type="Button"]
+offset_right = 62.0
+offset_bottom = 31.0
+toggle_mode = true
+text = "Level 1
+"
+script = ExtResource("1_stl32")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

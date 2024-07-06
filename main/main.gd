@@ -1,19 +1,23 @@
 extends Node
+class_name Main
 
-var level_instance: Node2D
+@export var level_resource: Level
 
-# Called when the node enters the scene tree for the first time.
+var level_scene_instance: Node = null
+
 func _ready():
 	Global.main_scene = self
-
-func unload_level():
-	if is_instance_valid(level_instance):
-		level_instance.queue_free()
-	level_instance = null
+	load_level(level_resource)
 	
-func load_level(level_scene: String):
+func unload_level():
+	if is_instance_valid(level_scene_instance):
+		level_scene_instance.queue_free()
+	level_resource = null
+	level_scene_instance = null
+	
+func load_level(new_level: Level):
 	unload_level()
-	var level_res: PackedScene = load(level_scene)
-	if(level_res):
-		level_instance = level_res.instantiate()
-		add_child(level_instance)
+	var new_level_scene: PackedScene = load(new_level.scene_path)
+	if(new_level_scene):
+		level_scene_instance = new_level_scene.instantiate()
+		add_child(level_scene_instance)
