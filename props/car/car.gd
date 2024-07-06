@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 class_name Car
 
 var on_interaction_zone = false
