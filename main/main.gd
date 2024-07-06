@@ -19,5 +19,6 @@ func load_level(new_level: Level):
 	unload_level()
 	var new_level_scene: PackedScene = load(new_level.scene_path)
 	if(new_level_scene):
+		Global.objective_completed = false
 		level_scene_instance = new_level_scene.instantiate()
 		add_child(level_scene_instance)
