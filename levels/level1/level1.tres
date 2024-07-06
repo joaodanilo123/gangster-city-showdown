@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" load_steps=2 format=3 uid="uid://dyfhy64gclqcl"]
+
+[ext_resource type="Script" path="res://resources/custom_resources_scripts/level.gd" id="1_ckvqw"]
+
+[resource]
+script = ExtResource("1_ckvqw")
+title = "Car Theft"
+description = "Steal the car to Escape the rival gang!"
+scene_path = "res://levels/level1/level1.tscn"

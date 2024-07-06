@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfvsoel1plamu"]
+
+[ext_resource type="Script" path="res://levels/menu/menu.gd" id="1_sa4is"]
+[ext_resource type="Texture2D" uid="uid://cl6nam831g8b0" path="res://assets/game_map.png" id="1_uu3pf"]
+[ext_resource type="PackedScene" uid="uid://bqqms627dhatf" path="res://levels/menu/map_button.tscn" id="2_8r1p4"]
+[ext_resource type="Resource" uid="uid://dyfhy64gclqcl" path="res://levels/level1/level1.tres" id="3_g0nis"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sa4is")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.109804, 0.184314, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.5
+offset_top = -221.5
+offset_right = 440.5
+offset_bottom = 221.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="LabelLevelTitle" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "TITULO DA FASE"
+horizontal_alignment = 1
+
+[node name="LabelLevelDescription" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAA
+AAAAAAAAAAAAAAAAA"
+autowrap_mode = 3
+
+[node name="ButtonHideout" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Go to Hideout
+"
+
+[node name="TextureRectMap" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_uu3pf")
+expand_mode = 2
+
+[node name="ButtonLevel1" parent="HBoxContainer/TextureRectMap" instance=ExtResource("2_8r1p4")]
+layout_mode = 0
+offset_left = 104.5
+offset_top = 293.5
+offset_right = 166.5
+offset_bottom = 324.5
+level = ExtResource("3_g0nis")
