@@ -8,6 +8,6 @@ class_name ArmouredCar
 func _process(delta):
 	pass
 
-func take_damage():
+func take_damage(emitter, source):
 	money_up_effect.play()
 	pass
