@@ -6,14 +6,21 @@ class_name Player
 @export var JUMP_FORCE : int = 500
 @export var GRAVITY : int = 900
 
+@onready var gun_barrel = $GunBarrel
+@onready var gun_cadence_timer = $GunCadenceTimer
 @onready var sprites = $Sprites
 @onready var facing_direction = 1
+@onready var can_shoot = true
+@onready var bullet: PackedScene = preload("res://props/projectiles/player_bullet/player_bullet.tscn")
+
 
 func _ready():
 	Global.player = self
 
 func _physics_process(delta):
 	handle_movement(delta)
+	handle_gun()
+
 
 func handle_movement(delta):
 	var direction = Input.get_axis("move_left","move_right")
@@ -29,11 +36,12 @@ func handle_movement(delta):
 				sprites.play("walking")
 	else:
 		velocity.x = 0
-		if is_on_floor():
+		if is_on_floor() and can_shoot:
 			sprites.play("idle")
-	
+			
 	sprites.flip_h = (facing_direction == -1) 
-
+	gun_barrel.position.x = abs(gun_barrel.position.x) * facing_direction
+	
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 		if velocity.y > 0:
@@ -44,4 +52,19 @@ func handle_movement(delta):
 			velocity.y -= JUMP_FORCE
 			sprites.play("jump")
 	move_and_slide()
-	
+
+func handle_gun():
+	if Input.is_action_pressed("shoot") and can_shoot:
+		sprites.play("shoot")
+		gun_cadence_timer.start()
+		can_shoot = false
+		
+		var bullet_instance: PlayerBullet = bullet.instantiate()
+		bullet_instance.global_position = gun_barrel.global_position
+		bullet_instance.direction = facing_direction
+		bullet_instance.emitter = self
+		Global.main_scene.add_child(bullet_instance)
+		
+
+func _on_gun_cadence_timer_timeout():
+	can_shoot = true
