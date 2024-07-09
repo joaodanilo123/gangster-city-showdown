@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2bbul6kuymps"]
+
+[ext_resource type="Script" path="res://player/player_hud.gd" id="1_ajmj5"]
+[ext_resource type="Theme" uid="uid://jgmtd30nb4gt" path="res://resources/themes/ui_theme.tres" id="2_wos8s"]
+[ext_resource type="Texture2D" uid="uid://vel72q3tadc8" path="res://assets/money.png" id="3_6qq7t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2djbb"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1w7g"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="PlayerHud" type="CanvasLayer"]
+script = ExtResource("1_ajmj5")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 50)
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 322.0
+offset_bottom = 59.0
+theme = ExtResource("2_wos8s")
+theme_override_styles/background = SubResource("StyleBoxFlat_2djbb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y1w7g")
+value = 100.0
+allow_greater = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.5
+offset_top = -11.5
+offset_right = 93.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(2.52686e-06, 0.458364, 9.62615e-08, 1)
+text = "MAX_HEALTH / HEALTH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 340.0
+offset_top = 22.0
+offset_right = 544.0
+offset_bottom = 60.0
+theme = ExtResource("2_wos8s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="PanelContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "100000000000000"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_6qq7t")
+expand_mode = 2

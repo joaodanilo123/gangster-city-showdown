@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ProjectileStats" load_steps=2 format=3 uid="uid://c4ab8774mpl3n"]
+
+[ext_resource type="Script" path="res://resources/custom_resources_scripts/projectile_stats.gd" id="1_dhtw3"]
+
+[resource]
+script = ExtResource("1_dhtw3")
+damage = 100
+speed = 1000
