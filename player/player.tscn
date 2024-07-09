@@ -619,6 +619,7 @@ metadata/_edit_lock_ = true
 shape = SubResource("CapsuleShape2D_lrok3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(200, 0)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
