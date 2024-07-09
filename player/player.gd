@@ -5,17 +5,21 @@ class_name Player
 @export var RUN_MULTIPLIER : int = 2
 @export var JUMP_FORCE : int = 500
 @export var GRAVITY : int = 900
+@export var max_health: int = 1000
 
+@onready var health : int = max_health
 @onready var gun_barrel = $GunBarrel
 @onready var gun_cadence_timer = $GunCadenceTimer
 @onready var sprites = $Sprites
 @onready var facing_direction = 1
 @onready var can_shoot = true
 @onready var bullet: PackedScene = preload("res://props/projectiles/player_bullet/player_bullet.tscn")
-
+@onready var hud: PackedScene = preload("res://player/player_hud.tscn")
 
 func _ready():
 	Global.player = self
+	var hud_instance = hud.instantiate()
+	add_child(hud_instance)
 
 func _physics_process(delta):
 	handle_movement(delta)

@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://jgmtd30nb4gt"]
+
+[ext_resource type="FontFile" uid="uid://hwle6mhy0lsr" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="1_4u6ta"]
+[ext_resource type="StyleBox" uid="uid://dqi5dsuepmhy6" path="res://resources/themes/button_hover.tres" id="2_6pcdv"]
+[ext_resource type="StyleBox" uid="uid://cewts057x8u7v" path="res://resources/themes/button_normal.tres" id="2_kkgmh"]
+
+[resource]
+default_font = ExtResource("1_4u6ta")
+Button/fonts/font = ExtResource("1_4u6ta")
+Button/styles/hover = ExtResource("2_6pcdv")
+Button/styles/normal = ExtResource("2_kkgmh")
+Label/fonts/font = ExtResource("1_4u6ta")

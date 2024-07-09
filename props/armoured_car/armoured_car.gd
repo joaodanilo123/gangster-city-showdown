@@ -13,7 +13,7 @@ func _process(delta):
 func take_damage(emitter, projectileStats: ProjectileStats):
 	if(emitter.is_in_group("player")):
 		health -= projectileStats.damage
-		Global.money += projectileStats.damage
+		Global.give_money(projectileStats.damage)
 		money_up_effect.play()
 
 func die():

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_ckvqw")
-title = "Car Theft"
-description = "Steal the car to Escape the rival gang!"
+title = "Bank"
+description = "Rob the armoured cars in the bank and escape"
 scene_path = "res://levels/level1/level1.tscn"
