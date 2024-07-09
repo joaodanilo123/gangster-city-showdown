@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx8sccrise6ni"]
+
+[ext_resource type="Texture2D" uid="uid://duq8jqop35xmw" path="res://assets/armoured_car.png" id="1_ucm5s"]
+[ext_resource type="Script" path="res://props/armoured_car/armoured_car.gd" id="1_vjrip"]
+[ext_resource type="PackedScene" uid="uid://dxss4wnbulcc5" path="res://props/money_up_effect/money_effect.tscn" id="2_0n8ia"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2fxd"]
+size = Vector2(199, 148)
+
+[node name="ArmouredCar" type="Area2D"]
+script = ExtResource("1_vjrip")
+
+[node name="ArmouredCar" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ucm5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23.5, 16)
+shape = SubResource("RectangleShape2D_f2fxd")
+
+[node name="MoneyUpEffect" parent="." instance=ExtResource("2_0n8ia")]
+position = Vector2(77, -25)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt3g44agtjyrr"]
+[gd_scene load_steps=7 format=3 uid="uid://dt3g44agtjyrr"]
 
 [ext_resource type="Script" path="res://levels/level1/level1.gd" id="1_647af"]
 [ext_resource type="TileSet" uid="uid://co0b7rjioxr3n" path="res://resources/tilesets/city_streets.tres" id="1_b88c5"]
 [ext_resource type="Texture2D" uid="uid://cwrlx41weyqbh" path="res://assets/backgrounds/bg1.png" id="2_k3bax"]
 [ext_resource type="PackedScene" uid="uid://xvkxxrvo3j3k" path="res://player/player.tscn" id="2_qevus"]
 [ext_resource type="PackedScene" uid="uid://coh83vmuo5u1y" path="res://props/car/car.tscn" id="4_gjkc5"]
+[ext_resource type="PackedScene" uid="uid://dx8sccrise6ni" path="res://props/armoured_car/armoured_car.tscn" id="5_odxm1"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_647af")
@@ -28,6 +29,9 @@ layer_0/tile_data = PackedInt32Array(2293760, 1376257, 7, 2293761, 1441793, 7, 2
 
 [node name="Car" parent="." instance=ExtResource("4_gjkc5")]
 position = Vector2(3575, 800)
+
+[node name="ArmouredCar" parent="." instance=ExtResource("5_odxm1")]
+position = Vector2(2433, 1029)
 
 [node name="Player" parent="." instance=ExtResource("2_qevus")]
 position = Vector2(490, 989)
