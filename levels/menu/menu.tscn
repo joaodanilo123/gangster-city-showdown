@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfvsoel1plamu"]
+[gd_scene load_steps=9 format=3 uid="uid://cfvsoel1plamu"]
 
 [ext_resource type="Script" path="res://levels/menu/menu.gd" id="1_sa4is"]
 [ext_resource type="Theme" uid="uid://jgmtd30nb4gt" path="res://resources/themes/ui_theme.tres" id="1_sg4yg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://dyfhy64gclqcl" path="res://levels/level1/level1.tres" id="3_g0nis"]
 [ext_resource type="Resource" uid="uid://c661sa3h8b2ri" path="res://levels/level2/level2.tres" id="5_qrlfl"]
 [ext_resource type="Resource" uid="uid://b3rt062tpsba1" path="res://levels/level3/level3.tres" id="7_67c6s"]
+[ext_resource type="Texture2D" uid="uid://cpr44bi6erguh" path="res://icon.svg" id="8_c2y3x"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -34,10 +35,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -440.5
-offset_top = -221.5
-offset_right = 440.5
-offset_bottom = 221.5
+offset_left = -437.0
+offset_top = -140.0
+offset_right = 444.0
+offset_bottom = 303.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
@@ -66,6 +67,7 @@ autowrap_mode = 3
 [node name="ButtonHideout" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
+disabled = true
 text = "Go to Hideout
 "
 
@@ -81,6 +83,7 @@ offset_left = 24.5
 offset_top = 406.5
 offset_right = 86.5
 offset_bottom = 437.5
+disabled = true
 toggle_mode = false
 level = ExtResource("3_g0nis")
 
@@ -90,6 +93,7 @@ offset_left = 214.5
 offset_top = 49.5
 offset_right = 276.5
 offset_bottom = 80.5
+disabled = true
 toggle_mode = false
 text = "Level 2
 "
@@ -101,6 +105,12 @@ offset_left = 591.5
 offset_top = 50.5
 offset_right = 653.5
 offset_bottom = 81.5
+disabled = true
 toggle_mode = false
 text = "Level 3"
 level = ExtResource("7_67c6s")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(674, 110)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_c2y3x")
