@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkbedtv4joufk"]
+[gd_scene load_steps=8 format=3 uid="uid://dkbedtv4joufk"]
 
 [ext_resource type="Texture2D" uid="uid://cud51t1sbln4d" path="res://assets/backgrounds/bg3.png" id="1_4j4pb"]
 [ext_resource type="Script" path="res://levels/level3/level3.gd" id="1_k88ra"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://coh83vmuo5u1y" path="res://props/car/car.tscn" id="3_pr0vn"]
 [ext_resource type="PackedScene" uid="uid://xvkxxrvo3j3k" path="res://player/player.tscn" id="4_eh5th"]
 [ext_resource type="PackedScene" uid="uid://cpssfnsg4jqar" path="res://props/security_camera/security_camera.tscn" id="6_lf42f"]
+[ext_resource type="PackedScene" uid="uid://flv3ruym0m4w" path="res://enemies/boss/boss.tscn" id="7_y4bme"]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_k88ra")
@@ -45,4 +46,9 @@ scale = Vector2(-1, 1)
 position = Vector2(6255, 1125)
 
 [node name="Player" parent="." instance=ExtResource("4_eh5th")]
-position = Vector2(510, 1031)
+position = Vector2(3531, 790)
+
+[node name="Boss" parent="." instance=ExtResource("7_y4bme")]
+position = Vector2(3131, 794)
+
+[connection signal="tree_exited" from="Boss" to="." method="_on_boss_tree_exited"]

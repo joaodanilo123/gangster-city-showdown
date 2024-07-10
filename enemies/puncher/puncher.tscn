@@ -473,7 +473,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8xeh4")
 animation = &"attack01"
 autoplay = "idle"
-frame_progress = 0.478093
+frame_progress = 0.920567
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

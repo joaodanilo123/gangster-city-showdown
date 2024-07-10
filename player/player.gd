@@ -83,6 +83,7 @@ func take_damage(emitter, projectileStats: ProjectileStats):
 func die():
 	sprites.play("death")
 	await get_tree().create_timer(sprites.get_playing_speed()).timeout
+	Global.complete_level()
 	queue_free()
 
 func _on_gun_cadence_timer_timeout():
