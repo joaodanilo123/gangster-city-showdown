@@ -5,7 +5,7 @@ Gangster City Showdown é um jogo de ação e aventura desenvolvido com o Godot 
 
 ## Pré-requisitos
 
-  - Godot Engine (versão 3.4 ou superior)
+  - Godot Engine (versão 4.2.2 ou superior)
 
 ## Estrutura do Projeto
 
