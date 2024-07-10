@@ -15,3 +15,10 @@ func _on_area_2d_area_entered(area):
 		area.take_damage(emitter, stats)
 	
 	queue_free()
+
+
+func _on_area_2d_body_entered(body):
+	if(body.has_method("take_damage")):
+		body.take_damage(emitter, stats)
+		queue_free()
+	

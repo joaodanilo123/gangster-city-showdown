@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" load_steps=2 format=3 uid="uid://c661sa3h8b2ri"]
+
+[ext_resource type="Script" path="res://resources/custom_resources_scripts/level.gd" id="1_dypum"]
+
+[resource]
+script = ExtResource("1_dypum")
+title = "Turf War"
+description = "Destroy the enemy supplies and take control of the territory"
+scene_path = "res://levels/level2/level2.tscn"
