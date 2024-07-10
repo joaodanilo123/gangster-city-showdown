@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpssfnsg4jqar"]
+
+[ext_resource type="Texture2D" uid="uid://djjgbu5mab8vp" path="res://assets/camera.png" id="1_8anpi"]
+[ext_resource type="Texture2D" uid="uid://ducj82vbiwx1g" path="res://assets/detection_area.png" id="1_gdrra"]
+[ext_resource type="Script" path="res://props/security_camera/security_camera.gd" id="1_v1ddy"]
+
+[node name="SecurityCamera" type="Node2D"]
+script = ExtResource("1_v1ddy")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+texture_filter = 1
+
+[node name="DetectionArea2" type="Sprite2D" parent="DetectionArea"]
+modulate = Color(1, 0, 0, 0.407843)
+texture_filter = 1
+position = Vector2(208.154, 90.5317)
+scale = Vector2(1.61351, 0.990274)
+skew = -0.466003
+texture = ExtResource("1_gdrra")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectionArea"]
+position = Vector2(12, 3)
+polygon = PackedVector2Array(399, 175, 138, 177, -12, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(-2, 2)
+texture = ExtResource("1_8anpi")
+
+[node name="RotationTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="timeout" from="RotationTimer" to="." method="_on_rotation_timer_timeout"]
