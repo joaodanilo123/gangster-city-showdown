@@ -1,5 +1,5 @@
 extends Node2D
-class_name PlayerBullet
+class_name PoliceBullet
 
 @export var stats: ProjectileStats
 
@@ -10,18 +10,9 @@ var direction: int = 0
 func _process(delta):
 	position.x += direction * stats.speed * delta
 
-func _on_area_2d_area_entered(area):
-	if(area.is_in_group("bullet")):
-		return
-	
-	if(area.has_method("take_damage")):
-		area.take_damage(emitter, stats)
-	
-	queue_free()
-
 
 func _on_area_2d_body_entered(body):
-	if(body.has_method("take_damage")):
+	if(body.has_method("take_damage") and body.is_in_group("player")):
 		body.take_damage(emitter, stats)
 		queue_free()
 	

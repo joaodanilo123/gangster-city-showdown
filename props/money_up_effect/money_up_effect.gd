@@ -6,5 +6,5 @@ class_name MoneyUpEffect
 func play():
 	animation_player.play("money_up")
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	animation_player.play("RESET")
