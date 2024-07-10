@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt3g44agtjyrr"]
+[gd_scene load_steps=9 format=3 uid="uid://dt3g44agtjyrr"]
 
 [ext_resource type="Script" path="res://levels/level1/level1.gd" id="1_647af"]
 [ext_resource type="TileSet" uid="uid://co0b7rjioxr3n" path="res://resources/tilesets/city_streets.tres" id="1_b88c5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://coh83vmuo5u1y" path="res://props/car/car.tscn" id="4_gjkc5"]
 [ext_resource type="Texture2D" uid="uid://c2vjlp7jwidxf" path="res://assets/itau.png" id="4_gx6b7"]
 [ext_resource type="PackedScene" uid="uid://dx8sccrise6ni" path="res://props/armoured_car/armoured_car.tscn" id="5_odxm1"]
+[ext_resource type="PackedScene" uid="uid://db72lwjeilgx0" path="res://enemies/police/police.tscn" id="7_x78o6"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_647af")
@@ -45,5 +46,24 @@ position = Vector2(2433, 1029)
 position = Vector2(1716, 1031)
 scale = Vector2(-1, 1)
 
+[node name="Police" parent="." instance=ExtResource("7_x78o6")]
+position = Vector2(1351, 1078)
+
+[node name="Police2" parent="." instance=ExtResource("7_x78o6")]
+position = Vector2(1120, 1061)
+facing_direction = -1
+
+[node name="Police3" parent="." instance=ExtResource("7_x78o6")]
+position = Vector2(2231, 1072)
+facing_direction = -1
+
+[node name="Police4" parent="." instance=ExtResource("7_x78o6")]
+position = Vector2(2715, 976)
+facing_direction = -1
+
+[node name="Police5" parent="." instance=ExtResource("7_x78o6")]
+position = Vector2(3142, 852)
+facing_direction = -1
+
 [node name="Player" parent="." instance=ExtResource("2_qevus")]
-position = Vector2(490, 989)
+position = Vector2(632, 1000)

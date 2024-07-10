@@ -5,16 +5,16 @@
 [ext_resource type="Resource" uid="uid://c4ab8774mpl3n" path="res://props/projectiles/player_bullet/player_bullet_stats.tres" id="2_obvar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov50j"]
-size = Vector2(75, 21)
+size = Vector2(34, 21)
 
-[node name="PlayerBullet" type="Node2D"]
+[node name="PlayerBullet" type="Node2D" groups=["bullet"]]
 script = ExtResource("1_pqeo7")
 stats = ExtResource("2_obvar")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7.5, -0.5)
+position = Vector2(-3, -0.5)
 shape = SubResource("RectangleShape2D_ov50j")
 
 [node name="PlayerBullet" type="Sprite2D" parent="."]

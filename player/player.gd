@@ -16,6 +16,8 @@ class_name Player
 @onready var bullet: PackedScene = preload("res://props/projectiles/player_bullet/player_bullet.tscn")
 @onready var hud: PackedScene = preload("res://player/player_hud.tscn")
 
+signal health_changed(new_health)
+
 func _ready():
 	Global.player = self
 	var hud_instance = hud.instantiate()
@@ -72,7 +74,11 @@ func handle_gun():
 		bullet_instance.direction = facing_direction
 		bullet_instance.emitter = self
 		Global.main_scene.add_child(bullet_instance)
-		
+
+func take_damage(emitter, projectileStats: ProjectileStats):
+	if(emitter.is_in_group("enemy")):
+		health -= projectileStats.damage
+		health_changed.emit(health)
 
 func die():
 	sprites.play("death")
