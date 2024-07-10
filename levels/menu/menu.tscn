@@ -66,6 +66,7 @@ autowrap_mode = 3
 [node name="ButtonHideout" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
+disabled = true
 text = "Go to Hideout
 "
 
@@ -81,6 +82,7 @@ offset_left = 24.5
 offset_top = 406.5
 offset_right = 86.5
 offset_bottom = 437.5
+disabled = true
 toggle_mode = false
 level = ExtResource("3_g0nis")
 
@@ -90,6 +92,7 @@ offset_left = 214.5
 offset_top = 49.5
 offset_right = 276.5
 offset_bottom = 80.5
+disabled = true
 toggle_mode = false
 text = "Level 2
 "
@@ -101,6 +104,7 @@ offset_left = 591.5
 offset_top = 50.5
 offset_right = 653.5
 offset_bottom = 81.5
+disabled = true
 toggle_mode = false
 text = "Level 3"
 level = ExtResource("7_67c6s")
