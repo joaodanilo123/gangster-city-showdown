@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3tvwvdowc8gj"]
+
+[ext_resource type="Script" path="res://props/supply_box/supplyBox.gd" id="1_l7ipm"]
+[ext_resource type="Texture2D" uid="uid://btrfp42pvtqvy" path="res://assets/enemy_box.png" id="1_qj3s6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lolpx"]
+size = Vector2(64, 64)
+
+[node name="SupplyBox" type="RigidBody2D"]
+mass = 30.0
+can_sleep = false
+linear_velocity = Vector2(0, 10)
+script = ExtResource("1_l7ipm")
+
+[node name="EnemyBox" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_qj3s6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_lolpx")

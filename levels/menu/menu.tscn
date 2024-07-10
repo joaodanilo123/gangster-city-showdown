@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfvsoel1plamu"]
+[gd_scene load_steps=6 format=3 uid="uid://cfvsoel1plamu"]
 
 [ext_resource type="Script" path="res://levels/menu/menu.gd" id="1_sa4is"]
 [ext_resource type="Texture2D" uid="uid://cl6nam831g8b0" path="res://assets/game_map.png" id="1_uu3pf"]
 [ext_resource type="PackedScene" uid="uid://bqqms627dhatf" path="res://levels/menu/map_button.tscn" id="2_8r1p4"]
 [ext_resource type="Resource" uid="uid://dyfhy64gclqcl" path="res://levels/level1/level1.tres" id="3_g0nis"]
+[ext_resource type="Resource" uid="uid://c661sa3h8b2ri" path="res://levels/level2/level2.tres" id="5_qrlfl"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -73,8 +74,17 @@ expand_mode = 2
 
 [node name="ButtonLevel1" parent="HBoxContainer/TextureRectMap" instance=ExtResource("2_8r1p4")]
 layout_mode = 0
-offset_left = 104.5
-offset_top = 293.5
-offset_right = 166.5
-offset_bottom = 324.5
+offset_left = 24.5
+offset_top = 406.5
+offset_right = 86.5
+offset_bottom = 437.5
 level = ExtResource("3_g0nis")
+
+[node name="ButtonLevel2" parent="HBoxContainer/TextureRectMap" instance=ExtResource("2_8r1p4")]
+offset_left = 214.5
+offset_top = 49.5
+offset_right = 276.5
+offset_bottom = 80.5
+text = "Level 2
+"
+level = ExtResource("5_qrlfl")

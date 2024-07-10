@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c20kvyeja0bbj"]
+
+[ext_resource type="Theme" uid="uid://jgmtd30nb4gt" path="res://resources/themes/ui_theme.tres" id="1_4gq31"]
+[ext_resource type="Script" path="res://levels/level2/objective_hud.gd" id="1_4xqco"]
+[ext_resource type="Texture2D" uid="uid://btrfp42pvtqvy" path="res://assets/enemy_box.png" id="2_ciadn"]
+
+[node name="ObjectiveHud" type="CanvasLayer"]
+script = ExtResource("1_4xqco")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 1000.0
+offset_top = 22.0
+offset_right = 1200.0
+offset_bottom = 72.0
+theme = ExtResource("1_4gq31")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0 / 10"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_ciadn")
