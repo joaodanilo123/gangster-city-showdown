@@ -22,6 +22,10 @@ func _ready():
 	add_child(hud_instance)
 
 func _physics_process(delta):
+	if(health <= 0):
+		die()
+		return
+	
 	handle_movement(delta)
 	handle_gun()
 
@@ -69,6 +73,11 @@ func handle_gun():
 		bullet_instance.emitter = self
 		Global.main_scene.add_child(bullet_instance)
 		
+
+func die():
+	sprites.play("death")
+	await get_tree().create_timer(sprites.get_playing_speed()).timeout
+	queue_free()
 
 func _on_gun_cadence_timer_timeout():
 	can_shoot = true

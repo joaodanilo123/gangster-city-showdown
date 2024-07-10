@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" load_steps=2 format=3 uid="uid://b3rt062tpsba1"]
+
+[ext_resource type="Script" path="res://resources/custom_resources_scripts/level.gd" id="1_qrl8m"]
+
+[resource]
+script = ExtResource("1_qrl8m")
+title = "Base raid"
+description = "Infiltrate the rival gang base and kill their leader"
+scene_path = "res://levels/level3/level3.tscn"
