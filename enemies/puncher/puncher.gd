@@ -62,6 +62,7 @@ func handle_movement(delta):
 	sprites.flip_h = (facing_direction == -1) 
 	gun_barrel.position.x = abs(gun_barrel.position.x) * facing_direction
 	detection_range.target_position.x = abs(detection_range.target_position.x) * facing_direction
+	punch_range.target_position.x = abs(punch_range.target_position.x) * facing_direction
 	
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
